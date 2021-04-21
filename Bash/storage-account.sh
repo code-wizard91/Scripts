@@ -1,5 +1,2 @@
-#!/bin/bash
-
-mkdir mydir
-rm -rf mydir
-
+#!/usr/bin/env bash
+ls -la

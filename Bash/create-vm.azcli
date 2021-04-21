@@ -1,0 +1,14 @@
+RG_NAME=vm-rg-test
+RG_LOCATION=uksouth
+VM_NAME=vm-$RANDOM
+SIZE=Standard_B1s
+IMAGE='UbuntuLTS'
+STORAGE_SKU=Standard_LRS
+OS_DISK_SIZE=30
+USERNAME=mizan
+
+az group create --name vm-rg-test --location uksouth
+az vm create --resource-group vm-rg-test --name vm-test-2138 --location uksouth --size Standard_B1s --generate-ssh-keys --image UbuntuLTS --storage-sku Standard_LRS --os-disk-size-gb 30
+PUB_IP=$(az vm show --name vm-test-2138 --resource-group vm-rg-test --show-details --query [publicIps] --output tsv)
+echo "Use command below to login"
+echo ssh -i ~/.ssh/id_rsa $USERNAME@$PUB_IP
