@@ -1,4 +1,4 @@
-RG_NAME=vm-rg-test
+RG_NAME=rg-test-monitoring
 RG_LOCATION=uksouth
 VM_NAME=vm-$RANDOM
 SIZE=Standard_B1s
